@@ -60,6 +60,7 @@ class ctrRoles
         return $respuesta;
     }
 
+    
     static public function ctrEditarRol()
     {
         if (isset($_POST["nom_rolE"])) {
