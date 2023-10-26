@@ -8,7 +8,7 @@ class ajaxPartidas{
   public $idPartidas;
 
     public function ajaxEditarPartidas(){
-        $item = "id";
+        $item = "id"; 
         $valor = $this->idPartidas;
         $respuesta = ctrPartidas::ctrMostrarPartidas($item,$valor);
            echo json_encode($respuesta);
