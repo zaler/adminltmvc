@@ -35,7 +35,8 @@ $(".tablaPartidas").DataTable({
 /*EDITAR PARTIDAS*/
 
 $(".tablaPartidas").on("click", ".btnEditarPartidas", function(){
-	var partida_id = $(this).attr("partida_id");
+	var partida_id = $(this).attr("idPartida");
+
 	//console.log(partida_id);
 	var datos = new FormData();
 	datos.append("partida_id", partida_id);
@@ -49,13 +50,13 @@ $(".tablaPartidas").on("click", ".btnEditarPartidas", function(){
 		dataType: "json",
 		success: function (respuesta) {
 
-            $('input[name="partida_id"]').val(respuesta["id"]);
-            $('input[name="nombre"]').val(respuesta["nombre"]);
-			$('input[name="fecha"]').val(respuesta["fech_nac"]);
-			$('input[name="grado"]').val(respuesta["grado_id"]);
-            $('input[name="seccion"]').val(respuesta["secciones_id"]);
-            $('input[name="madre"]').val(respuesta["nombre_madre"]);
-            $('input[name="padre"]').val(respuesta["nombre_padre"]);
+            $('input[name="partida_idE"]').val(respuesta["id"]);
+            $('input[name="nombreE"]').val(respuesta["nombre"]);
+			$('input[name="fechaE"]').val(respuesta["fech_nac"]);
+			$('input[name="gradoE"]').val(respuesta["grado_id"]);
+            $('input[name="seccionE"]').val(respuesta["secciones_id"]);
+            $('input[name="madreE"]').val(respuesta["nombre_madre"]);
+            $('input[name="padreE"]').val(respuesta["nombre_padre"]);
 
 		}
 	})

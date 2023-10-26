@@ -199,16 +199,16 @@ Modal editar partidas
             </div>
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <input type="hidden" name="partida_id">
-                    <input type="text" class="form-control" name="nombre" placeholder="nombre">
+                    <input type="hidden" name="partida_idE">
+                    <input type="text" class="form-control" name="nombreE" placeholder="nombre">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <input id="calendar" type="date" class="form-control" name="fecha" placeholder="Fecha de nacimiento" data-date-format="YYYY-MM-DD">
+                    <input id="calendar" type="date" class="form-control" name="fechaE" placeholder="Fecha de nacimiento" data-date-format="YYYY-MM-DD">
                     <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <select class="form-control" name="grado" required>
+                    <select class="form-control" name="gradoE" required>
 
                     <?php
                    
@@ -224,7 +224,7 @@ Modal editar partidas
                     </select>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <select class="form-control" name="seccion" required>
+                    <select class="form-control" name="seccionE" required>
 
                     <?php
                    
@@ -240,16 +240,14 @@ Modal editar partidas
                     </select>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <input type="text" class="form-control" name="madre" placeholder="Nombre de la madre">
+                    <input type="text" class="form-control" name="madreE" placeholder="Nombre de la madre">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <input type="text" class="form-control" name="padre" placeholder="Nombre del padre">
+                    <input type="text" class="form-control" name="padreE" placeholder="Nombre del padre">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>
-
-                
-                
+              
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger pull-left" data-dismiss="modal">cerrar</button>
                     <button type="submit" class="btn btn-primary">guardar</button>
