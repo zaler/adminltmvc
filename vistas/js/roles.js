@@ -43,20 +43,11 @@ $(".tablaRoles").DataTable({
 /*EDITAR USUARIOI*/
 
 $(".tablaRoles").on("click", ".btnEditarRoles", function(){
-
-
-
 	var idRoles = $(this).attr("idRol");
-
 	//console.log(idUsuario);
-
 	var datos = new FormData();
-
 	datos.append("idRoles", idRoles);
-
-
 	$.ajax({
-
 		url:"ajax/roles.ajax.php",
 		method: "POST",
 		data: datos,
@@ -65,19 +56,10 @@ $(".tablaRoles").on("click", ".btnEditarRoles", function(){
 		processData: false,
 		dataType: "json",
 		success: function (respuesta) {
-
-			
             $('input[name="id_rolE"]').val(respuesta["id_roles"]);
 			$('input[name="nom_rolE"]').val(respuesta["nom_rol"]);
-			
-			
-
-
 		}
-
-
 	})
-
 })
 
 

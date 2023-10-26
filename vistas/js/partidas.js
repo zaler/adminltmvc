@@ -1,6 +1,3 @@
-
-
-
 $(".tablaPartidas").DataTable({
 	
 	"deferRender": true,
@@ -35,28 +32,14 @@ $(".tablaPartidas").DataTable({
 
 });
 
+/*EDITAR PARTIDAS*/
 
-
-
-
-
-/*EDITAR USUARIOI*/
-
-$(".tablaRoles").on("click", ".btnEditarRoles", function(){
-
-
-
-	var idRoles = $(this).attr("idRol");
-
-	//console.log(idUsuario);
-
+$(".tablaPartidas").on("click", ".btnEditarPartidas", function(){
+	var partida_id = $(this).attr("partida_id");
+	//console.log(partida_id);
 	var datos = new FormData();
-
-	datos.append("idRoles", idRoles);
-
-
+	datos.append("partida_id", partida_id);
 	$.ajax({
-
 		url:"ajax/partidas.ajax.php",
 		method: "POST",
 		data: datos,
@@ -66,7 +49,6 @@ $(".tablaRoles").on("click", ".btnEditarRoles", function(){
 		dataType: "json",
 		success: function (respuesta) {
 
-			
             $('input[name="partida_id"]').val(respuesta["id"]);
             $('input[name="nombre"]').val(respuesta["nombre"]);
 			$('input[name="fecha"]').val(respuesta["fech_nac"]);
@@ -74,14 +56,9 @@ $(".tablaRoles").on("click", ".btnEditarRoles", function(){
             $('input[name="seccion"]').val(respuesta["secciones_id"]);
             $('input[name="madre"]').val(respuesta["nombre_madre"]);
             $('input[name="padre"]').val(respuesta["nombre_padre"]);
-			
-
 
 		}
-
-
 	})
-
 })
 
 

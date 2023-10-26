@@ -83,68 +83,33 @@
                                             <td><?= $value["padre"]  ?></td>
                                             <td><label style="background:<?=$value["color"]?>; padding: 6px;border-radius: 5px;" ><?=$value["estado"]?></label></td>
                                             <td>
-
                                                 <div class='btn-group'>
-
-                                                    <button class="btn btn-warning btn-sm btnEditarUsuario" data-toggle="modal" idPartida="<?php echo $value["id"]  ?>" data-target="#modal-editar-partida">
+                                                    <button class="btn btn-warning btn-sm btnEditarPartida" data-toggle="modal" idPartida="<?php echo $value["id"]  ?>" data-target="#modal-editar-partida">
                                                         <i class="fas fa-pencil-alt text-white"></i>
                                                     </button>
-
-                                                    <button class="btn btn-danger btn-sm eliminarUsuario" idPartidaE="<?= $value["id"]  ?>">
+                                                    <button class="btn btn-danger btn-sm eliminarPartida" idPartidaE="<?= $value["id"]  ?>">
                                                         <i class=" fas fa-trash-alt text-white"></i>
                                                     </button>
-
                                                 </div>
-
-                                            </td>
-
+                                              </td>
                                         </tr>
-
-
                                     <?php
-
                                     }
-
                                     ?>
-
-
                                 </tbody>
-
                             </table>
-
                         </div>
                         <!-- /.card-body -->
-
                         <div class="card-footer">
-
                         </div>
                         <!-- /.card-footer-->
-
                     </div>
                     <!-- /.card -->
-
                 </div>
-
             </div>
-
         </div>
-
     </section>
-
-
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 <!--=====================================
@@ -230,7 +195,7 @@ Modal editar partidas
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="alert alert-success alert-dismissible ">editar rol</h4>
+                <h4 class="alert alert-success alert-dismissible ">editar partida</h4>
             </div>
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group has-feedback" bis_skin_checked="1">

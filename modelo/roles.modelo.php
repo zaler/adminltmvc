@@ -52,7 +52,7 @@ class mdlroles{
     static public function mdlEditarRoles($tabla, $nomRol , $idrol){
         $stmt = Conexion::conectar()->prepare("UPDATE $tabla SET nom_rol=:rol_nom WHERE id_roles =:id");
         $stmt->bindParam(":id", $idrol, PDO::PARAM_STR);
-	    $stmt->bindParam(":rol_nom", $nomRol, PDO::PARAM_STR);
+	      $stmt->bindParam(":rol_nom", $nomRol, PDO::PARAM_STR);
         if($stmt -> execute()){
 			return "ok";
 		}else{

@@ -46,7 +46,13 @@ class mdlPartidas{
 		}
 		$stmt = null;
     }
-
+    
+    static public function mdlVerPartidas($tabla , $item ,$valor ){
+        $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item=:IDE");
+        $stmt->bindParam(":IDE", $valor, PDO::PARAM_INT);
+        $stmt -> execute();
+        return $stmt -> fetch();
+}
     /*static public function MdlMostrarPartidas1($tabla,$item ,$valor){
         $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item =:$item");
         $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);

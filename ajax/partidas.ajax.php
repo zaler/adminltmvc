@@ -5,12 +5,12 @@ require_once "../modelo/partidas.modelo.php";
 
 class ajaxPartidas{
 
-  public $idPartidas;
+  public $ ;
 
     public function ajaxEditarPartidas(){
         $item = "partida_id"; 
-        $valor = $this->idPartidas;
-        $respuesta = ctrPartidas::ctrMostrarPartidas1($item,$valor);
+        $valor = $this->partida_id;
+        $respuesta = ctrPartidas::ctrVerPartidas($item,$valor);
         echo json_encode($respuesta);
     }
 
@@ -30,9 +30,9 @@ if(isset($_POST["partida_id"])){
 }
 
 //eliminar partidas
-if(isset($_POST["idPartidaE"])){
+if(isset($_POST["idPartidasE"])){
   $eliminar = new ajaxPartidas();
-  $eliminar->idPartidasE = $_POST["idPartidaE"];
+  $eliminar->idPartidasE = $_POST["idPartidasE"];
   $eliminar->ajaxEliminarPartidas();
 }
 ?>

@@ -1,25 +1,16 @@
 <?php
 session_start();
 $usuarios = ctrUsuarios::ctrMostrarUsuarios();
-
 $roles = ctrRoles::ctrMostrarRoles2();
-
 $partidas = ctrPartidas::ctrMostrarPartidas();
+
 //var_dump($roles);
-
 //echo "</pre>";  print_r($roles); echo "</pre>";
-
 if(isset($_SESSION["idBackend"])){
-
-
     $admin=ctrUsuarios::ctrMostrarUsuarios1("id", $_SESSION["idBackend"]);
-
-
 }
- 
+
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -58,45 +49,23 @@ if(isset($_SESSION["idBackend"])){
 
 
 <?php if(!isset($_SESSION["validarSession"])):
-
-
-
 include "paginas/login.php";
-
-
-
-
 ?>
-
-
 <?php else: ?>
-
-
-
 <body class="hold-transition skin-blue sidebar-mini">
-
     <div class="wrapper">
-
         <?php include "modulos/header.php"; ?>
-
         <!-- =============================================== -->
-
-
         <?php include "modulos/menu.php"; ?>
         <!-- =============================================== -->
-
         <?php 
-
         if(isset($_GET["pagina"])){
-
             if($_GET["pagina"]== "usuarios" ||
                $_GET["pagina"]== "salir" ||
                $_GET["pagina"]== "roles"||
                $_GET["pagina"]== "partidas")
-               {
-
+            {
                 include "paginas/".$_GET["pagina"].".php";
-
             }
 
         }

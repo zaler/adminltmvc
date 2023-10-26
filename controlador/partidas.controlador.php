@@ -80,7 +80,7 @@ class ctrPartidas
     static public function ctrVerPartidas($item, $valor)
     {
         $tabla = "mnt_partidas";
-        $respuesta = mdlPartidas::ctrMostrarPartidas1($tabla, $item, $valor);
+        $respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
         return $respuesta;
     }
     
