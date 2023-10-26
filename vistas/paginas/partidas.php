@@ -234,6 +234,7 @@ Modal editar partidas
             </div>
             <form method="post" enctype="multipart/form-data">
                 <div class="form-group has-feedback" bis_skin_checked="1">
+                    <input type="hidden" name="partida_id">
                     <input type="text" class="form-control" name="nombre" placeholder="nombre">
                     <span class="glyphicon glyphicon-user form-control-feedback"></span>
                 </div>

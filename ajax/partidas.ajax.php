@@ -8,34 +8,31 @@ class ajaxPartidas{
   public $idPartidas;
 
     public function ajaxEditarPartidas(){
-        $item = "id"; 
+        $item = "partida_id"; 
         $valor = $this->idPartidas;
-        $respuesta = ctrPartidas::ctrMostrarPartidas($item,$valor);
-           echo json_encode($respuesta);
+        $respuesta = ctrPartidas::ctrMostrarPartidas1($item,$valor);
+        echo json_encode($respuesta);
     }
 
  public $idPartidasE;
-
    public function ajaxEliminarPartidas(){
         $valor = $this->idPartidasE;
-        $respuesta = ctrPartidas::ctrEliminarPartidas1($valor);
+        $respuesta = ctrPartidas::ctrEliminarPartidas($valor);
         echo $respuesta;
     }
 }
 
 //editar partidas
-if(isset($_POST["id"])){
-$editar = new ajaxPartidas();
-$editar->id = $_POST["id"];
-$editar->ajaxEditarPartidas();
+if(isset($_POST["partida_id"])){
+  $editar = new ajaxPartidas();
+  $editar->partida_id = $_POST["partida_id"]; 
+  $editar->ajaxEditarPartidas();
 }
 
 //eliminar partidas
-
 if(isset($_POST["idPartidaE"])){
-$eliminar = new ajaxPartidas();
-$eliminar->idPartidasE = $_POST["idPartidaE"];
-$eliminar->ajaxEliminarPartidas();
-
+  $eliminar = new ajaxPartidas();
+  $eliminar->idPartidasE = $_POST["idPartidaE"];
+  $eliminar->ajaxEliminarPartidas();
 }
 ?>

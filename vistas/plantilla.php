@@ -26,7 +26,7 @@ if(isset($_SESSION["idBackend"])){
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>GESTOR DE USUARIOS Y ROLES</title>
+    <title>GESTOR DE PARTIDAS DE NACIMIENTO</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
@@ -129,6 +129,7 @@ include "paginas/login.php";
 
     <script src="vistas/js/usuarios.js"></script>
     <script src="vistas/js/roles.js"></script>
+    <script src="vistas/js/partidas.js"></script>
     <script>
     $(document).ready(function() {
         $('.sidebar-menu').tree()

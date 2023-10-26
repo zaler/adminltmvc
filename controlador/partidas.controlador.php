@@ -2,19 +2,19 @@
 
 class ctrPartidas
 {
-   /* static public function ctrEliminarPartidas($valor)
+   static public function ctrEliminarPartidas($valor)
     {
         $tabla = "partidas";
         $respuesta = mdlPartidas::mdlEliminarPartidas($tabla, $valor);
         return $respuesta;
     }
 
-    static public function ctrMostrarPartidas2($item, $valor)
+    static public function ctrMostrarPartidas1($item, $valor)
     {
-        $tabla = "partidas";
-      $respuesta = mdlPartidas::mdlMostrarPartidas($tabla, $item, $valor);
+        $tabla = "mnt_partidas";
+        $respuesta = mdlPartidas::mdlMostrarPartidas($tabla, $item, $valor);
         return $respuesta;
-    }*/
+    }
     
     static public function ctrMostrarPartidas()
     {
@@ -76,25 +76,29 @@ class ctrPartidas
             }
         }
     }
-/*
-    static public function ctrVerParidas($item, $valor)
+
+    static public function ctrVerPartidas($item, $valor)
     {
-        $tabla = "partidas";
-        $respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
+        $tabla = "mnt_partidas";
+        $respuesta = mdlPartidas::ctrMostrarPartidas1($tabla, $item, $valor);
         return $respuesta;
     }
-    */
+    
 
     static public function ctrEditarPartida()
     {
         if (isset($_POST["nombre"])) {
+            $id= $_POST['partida_id'];
             $nomPart = $_POST["nombre"];
             $fechPart = $_POST["fecha"];
             $gradPart = $_POST["grado"];
             $secPart = $_POST["seccion"];
             $madPart = $_POST["madre"];
             $padPart = $_POST["padre"];
-            $respuesta = mdlPartidas::mdlEditarPartidas($tabla, $nomRolE, $idrol);
+
+            $tabla = "mnt_partidas";
+
+            $respuesta = mdlPartidas::mdlEditarPartidas($tabla,  $id, $nomPart,$fechPart,$gradPart,$secPart,$madPart,$padPart);
             if ($respuesta == "ok") {
                echo '<script>
 						swal({
