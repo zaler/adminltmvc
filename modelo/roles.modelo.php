@@ -13,7 +13,6 @@ class mdlroles{
 			echo "\nPDO::errorInfo():\n";
     		print_r(Conexion::conectar()->errorInfo());
 		}
-		$stmt -> close();
 		$stmt = null;
     }
 
@@ -38,7 +37,7 @@ class mdlroles{
         }else{
             echo "error";
         }
-        $stmt->close();
+        
 		$stmt = null;
     }
 
@@ -58,7 +57,7 @@ class mdlroles{
 		}else{
 			echo "error";
 		}
-		$stmt-> close();
+	
 		$stmt = null;
     }
 }

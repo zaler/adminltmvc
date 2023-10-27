@@ -5,25 +5,17 @@ require_once "conexion.php";
 
 
 class mdlPartidas{
-    static public function ctrMostrarPartidas1($tabla , $item , $valor){
-	        $stmt = Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item = :$item");
-			$stmt->bindParam(":".$item, $valor, PDO::PARAM_STR);
-			$stmt -> execute();
-			return $stmt -> fetch();
-           
-	    	$stmt = null;
-    }
-
-    static public function mdlEliminarPartidas($tabla ,$valor){
-        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id =:id");
-        $stmt -> bindParam(":id", $valor, PDO::PARAM_INT);
+    static public function mdlEliminarPartidas($tabla , $valor){
+        $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id =:idE");
+        $stmt -> bindParam(":idE", $valor, PDO::PARAM_INT);
         if($stmt -> execute()){
-			return "ok";	
-		}else{
-			echo "\nPDO::errorInfo():\n";
-    		print_r(Conexion::conectar()->errorInfo());
-		}
-		$stmt = null;
+            return "ok";
+        }else{
+            echo "\nPDO::errorInfo():\n";
+            print_r(Conexion::conectar()->errorInfo());
+        }
+        
+        $stmt = null;
     }
 
     static public function mdlEditarPartidas($tabla , $id, $nomPart,$fechPart,$gradPart,$secPart,$madPart,$padPart){
@@ -52,15 +44,6 @@ class mdlPartidas{
         $stmt -> execute();
         return $stmt -> fetch();
 }
-    /*static public function MdlMostrarPartidas1($tabla,$item ,$valor){
-        $stmt= Conexion::conectar()->prepare("SELECT * FROM $tabla WHERE $item =:$item");
-        $stmt -> bindParam(":".$item, $valor, PDO::PARAM_STR);
-		$stmt -> execute();
-		return $stmt -> fetch();
-        $stmt -> close();
-		$stmt = null;
-    }*/
-
 
     static public function mdlMostrarPartidas($tabla,$tabla2,$tabla3,$tabla4){
         $stmt= Conexion::conectar()->prepare("SELECT p.id as id, p.nombre as nombre, p.fech_nac as fecha, g.nombre as grado, s.nombre as seccion , p.nombre_madre as madre, p.nombre_padre as padre, e.nombre as estado, e.color as color FROM $tabla  INNER JOIN $tabla2 ON g.id = p.grado_id INNER JOIN $tabla3 ON s.id = p.secciones_id INNER JOIN $tabla4 ON e.id = p.estado_id");

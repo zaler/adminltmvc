@@ -64,11 +64,12 @@ $(".tablaPartidas").on("click", ".btnEditarPartida", function(){
 	})
 })
 
-/**ELIMINAR roles */
+/**ELIMINAR PARTIDAS */
+
 $(document).on("click", ".eliminarPartida", function(){
 	var idPartidaE = $(this).attr("idPartidaE");
 	swal({
-		title: '¿Está seguro de eliminar este esta partida de nacimiento?',
+		title: '¿Está seguro de eliminar este rol?',
 		text: "¡Si no lo está puede cancelar la acción!",
 		type: 'warning',
 		showCancelButton: true,
@@ -93,17 +94,17 @@ $(document).on("click", ".eliminarPartida", function(){
 						swal({
 							type: "success",
 							title: "¡CORRECTO!",
-							text: "La partida ha sido borrada correctamente",
+							text: "La partida se ha sido borrado correctamente",
 							showConfirmButton: true,
 							confirmButtonText: "Cerrar"
 						}).then(function (result) {
 							if (result.value){
 								window.location = "partidas";		
-							}
-						})
-             		}
-           		}
-			})
-      	}
+                     }
+                })
+             }
+          }
+        })
+      }
     })
 })

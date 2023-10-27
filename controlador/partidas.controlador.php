@@ -4,17 +4,10 @@ class ctrPartidas
 {
    static public function ctrEliminarPartidas($valor)
     {
-        $tabla = "partidas";
+        $tabla = "mnt_partidas";
         $respuesta = mdlPartidas::mdlEliminarPartidas($tabla, $valor);
         return $respuesta;
     }
-
-    /*static public function ctrMostrarPartidas1($item, $valor)
-    {
-        $tabla = "mnt_partidas";
-        $respuesta = mdlPartidas::mdlMostrarPartidas($tabla, $item, $valor);
-        return $respuesta;
-    }*/
     
     static public function ctrMostrarPartidas()
     {

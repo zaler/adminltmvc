@@ -76,10 +76,7 @@ $(".tablaRoles").on("click", ".btnEditarRoles", function(){
 /**ELIMINAR roles */
 
 $(document).on("click", ".eliminarRol", function(){
-
 	var idRolEl = $(this).attr("idRolesE");
-	
-	
 	swal({
 		title: '¿Está seguro de eliminar este rol?',
 		text: "¡Si no lo está puede cancelar la acción!",
@@ -90,17 +87,10 @@ $(document).on("click", ".eliminarRol", function(){
 		cancelButtonText: 'Cancelar',
 		confirmButtonText: 'Si, eliminar rol!'
 	}).then(function(result){
-
-
 		if (result.value) {
-
 			var datos = new FormData();
 			datos.append("idRolE", idRolEl);
-			
-			
-
 			$.ajax({
-
 				url: "ajax/roles.ajax.php",
 				method: "POST",
 				data: datos,
@@ -108,9 +98,7 @@ $(document).on("click", ".eliminarRol", function(){
 				contentType: false,
 				processData: false,
 				success:function (respuesta) {
-
 					console.log(respuesta);
-
 					if (respuesta == "ok") {
 						swal({
 							type: "success",
@@ -119,22 +107,13 @@ $(document).on("click", ".eliminarRol", function(){
 							showConfirmButton: true,
 							confirmButtonText: "Cerrar"
 						}).then(function (result) {
-
 							if (result.value){
-
-								window.location = "roles";
-								
+								window.location = "roles";		
                      }
                 })
-
              }
-
           }
-
         })
-
       }
-
     })
-
 })
