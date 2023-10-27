@@ -30,9 +30,9 @@ if(isset($_POST["id"])){
 }
 
 //eliminar partidas
-if(isset($_POST["id"])){
+if(isset($_POST["idPartidasE"])){
   $eliminar = new ajaxPartidas();
-  $eliminar->idPartidasE = $_POST["id"];
+  $eliminar->idPartidasE = $_POST["idPartidasE"];
   $eliminar->ajaxEliminarPartidas();
 }
 ?>

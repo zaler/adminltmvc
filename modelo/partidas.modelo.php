@@ -79,7 +79,6 @@ class mdlPartidas{
 		return $stmt -> fetchAll();
     }
 
-
     static public function mdlGuardarPartidas($tabla, $nomPart,$fechPart,$gradPart,$secPart,$madPart,$padPart, $estPart){
         $stmt= Conexion::conectar()->prepare("INSERT INTO $tabla (nombre, fech_nac, grado_id, secciones_id,nombre_madre,nombre_padre, estado_id) 
         VALUES (:NOMBRE_PART,:FECHA_PART,:GRADO_PART,:SECCION_PART,:MADRE_PART,:PADRE_PART,:ESTADO_PART)");
