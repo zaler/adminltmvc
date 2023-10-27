@@ -2,19 +2,19 @@
 
 class ctrPartidas
 {
-   static public function ctrEliminarPartidas($valor)
+   /*static public function ctrEliminarPartidas($valor)
     {
         $tabla = "partidas";
         $respuesta = mdlPartidas::mdlEliminarPartidas($tabla, $valor);
         return $respuesta;
-    }
+    }*/
 
-    static public function ctrMostrarPartidas1($item, $valor)
+    /*static public function ctrMostrarPartidas1($item, $valor)
     {
         $tabla = "mnt_partidas";
         $respuesta = mdlPartidas::mdlMostrarPartidas($tabla, $item, $valor);
         return $respuesta;
-    }
+    }*/
     
     static public function ctrMostrarPartidas()
     {
@@ -79,8 +79,17 @@ class ctrPartidas
 
     static public function ctrVerPartidas($item, $valor)
     {
-        $tabla = "mnt_partidas";
+
+        try {
+            $tabla = "mnt_partidas";
         $respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
+        } catch (Exception $e) {
+            // Manejo de la excepción de división por cero
+            $respuesta= $e->getMessage();
+        }
+
+        //$tabla = "mnt_partidas";
+        //$respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
         return $respuesta;
     }
     
@@ -88,7 +97,7 @@ class ctrPartidas
     static public function ctrEditarPartida()
     {
         if (isset($_POST["nombre"])) {
-            $id= $_POST['partida_id'];
+            $id = $_POST['partida_id'];
             $nomPart = $_POST["nombre"];
             $fechPart = $_POST["fecha"];
             $gradPart = $_POST["grado"];

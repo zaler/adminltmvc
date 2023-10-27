@@ -5,12 +5,13 @@ require_once "../modelo/partidas.modelo.php";
 
 class ajaxPartidas{
 
-  public $partida_id ;
+  public $id ;
 
     public function ajaxEditarPartidas(){
         $item = "id"; 
-        $valor = $this->partida_id;
+        $valor = $this->id;
         $respuesta = ctrPartidas::ctrVerPartidas($item,$valor);
+        
         echo json_encode($respuesta);
     }
 

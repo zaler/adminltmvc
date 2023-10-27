@@ -84,7 +84,7 @@
                                             <td><label style="background:<?=$value["color"]?>; padding: 6px;border-radius: 5px;" ><?=$value["estado"]?></label></td>
                                             <td>
                                                 <div class='btn-group'>
-                                                    <button class="btn btn-warning btn-sm btnEditarPartida" data-toggle="modal" idPartida="<?php echo $value["id"]  ?>" data-target="#modal-editar-partida">
+                                                    <button class="btn btn-warning btn-sm btnEditarPartida" data-toggle="modal" idpartida="<?php echo $value["id"]  ?>" data-target="#modal-editar-partida">
                                                         <i class="fas fa-pencil-alt text-white"></i>
                                                     </button>
                                                     <button class="btn btn-danger btn-sm eliminarPartida" idPartidaE="<?= $value["id"]  ?>">

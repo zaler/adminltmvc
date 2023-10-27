@@ -34,12 +34,14 @@ $(".tablaPartidas").DataTable({
 
 /*EDITAR PARTIDAS*/
 
-$(".tablaPartidas").on("click", ".btnEditarPartidas", function(){
-	var partida_id = $(this).attr("idPartida");
+$(".tablaPartidas").on("click", ".btnEditarPartida", function(){
+	var id = $(this).attr("idPartida");
 
-	//console.log(partida_id);
+	console.log(id);
 	var datos = new FormData();
-	datos.append("partida_id", partida_id);
+	
+	datos.append("id", id);
+	
 	$.ajax({
 		url:"ajax/partidas.ajax.php",
 		method: "POST",
@@ -58,6 +60,9 @@ $(".tablaPartidas").on("click", ".btnEditarPartidas", function(){
             $('input[name="madreE"]').val(respuesta["nombre_madre"]);
             $('input[name="padreE"]').val(respuesta["nombre_padre"]);
 
+		},
+		error: function(){
+			console.log('error');
 		}
 	})
 })
@@ -75,7 +80,7 @@ $(".tablaPartidas").on("click", ".btnEditarPartidas", function(){
 
 /**ELIMINAR roles */
 
-$(document).on("click", ".eliminarRol", function(){
+/*$(document).on("click", ".eliminarRol", function(){
 
 	var idRolEl = $(this).attr("idRolesE");
 	
@@ -137,4 +142,4 @@ $(document).on("click", ".eliminarRol", function(){
 
     })
 
-})
+})*/
