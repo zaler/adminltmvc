@@ -64,79 +64,46 @@ $(".tablaPartidas").on("click", ".btnEditarPartida", function(){
 	})
 })
 
-
-
-
-
-
-
-
-
-
-
-
 /**ELIMINAR roles */
-
-/*$(document).on("click", ".eliminarRol", function(){
-
-	var idRolEl = $(this).attr("idRolesE");
-	
-	
+$(document).on("click", ".eliminarPartida", function(){
+	var idPartidaE = $(this).attr("idPartidaE");
 	swal({
-		title: '¿Está seguro de eliminar este rol?',
+		title: '¿Está seguro de eliminar este esta partida de nacimiento?',
 		text: "¡Si no lo está puede cancelar la acción!",
 		type: 'warning',
 		showCancelButton: true,
 		confirmButtonColor: '#3085d6',
 		cancelButtonColor: '#d33',
 		cancelButtonText: 'Cancelar',
-		confirmButtonText: 'Si, eliminar rol!'
+		confirmButtonText: 'Si, eliminar partida!'
 	}).then(function(result){
-
-
 		if (result.value) {
-
 			var datos = new FormData();
-			datos.append("idRolE", idRolEl);
-			
-			
-
+			datos.append("idPartidaE", idPartidaE);
 			$.ajax({
-
-				url: "ajax/roles.ajax.php",
+				url: "ajax/partidas.ajax.php",
 				method: "POST",
 				data: datos,
 				cache: false,
 				contentType: false,
 				processData: false,
 				success:function (respuesta) {
-
 					console.log(respuesta);
-
 					if (respuesta == "ok") {
 						swal({
 							type: "success",
 							title: "¡CORRECTO!",
-							text: "El rol ha sido borrado correctamente",
+							text: "La partida ha sido borrada correctamente",
 							showConfirmButton: true,
 							confirmButtonText: "Cerrar"
 						}).then(function (result) {
-
 							if (result.value){
-
-								window.location = "roles";
-								
-                     }
-                })
-
-             }
-
-          }
-
-        })
-
-      }
-
+								window.location = "partidas";		
+							}
+						})
+             		}
+           		}
+			})
+      	}
     })
-
-})*/
+})

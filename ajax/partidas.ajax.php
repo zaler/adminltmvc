@@ -14,9 +14,6 @@ class ajaxPartidas{
         echo json_encode($respuesta);
     }
 
-
-
-    
   public $idPartidasE;
     public function ajaxEliminarPartidas(){
         $valor = $this->idPartidasE;
@@ -33,9 +30,9 @@ if(isset($_POST["id"])){
 }
 
 //eliminar partidas
-if(isset($_POST["idPartidasE"])){
+if(isset($_POST["id"])){
   $eliminar = new ajaxPartidas();
-  $eliminar->idPartidasE = $_POST["idPartidasE"];
+  $eliminar->idPartidasE = $_POST["id"];
   $eliminar->ajaxEliminarPartidas();
 }
 ?>

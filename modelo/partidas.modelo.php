@@ -14,18 +14,17 @@ class mdlPartidas{
 	    	$stmt = null;
     }
 
-    /*static public function mdlEliminarPartidas($tabla , $id){
+    static public function mdlEliminarPartidas($tabla ,$valor){
         $stmt = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id =:id");
-        $stmt -> bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt -> bindParam(":id", $valor, PDO::PARAM_INT);
         if($stmt -> execute()){
 			return "ok";	
 		}else{
 			echo "\nPDO::errorInfo():\n";
     		print_r(Conexion::conectar()->errorInfo());
 		}
-		$stmt -> close();
 		$stmt = null;
-    }*/
+    }
 
     static public function mdlEditarPartidas($tabla , $id, $nomPart,$fechPart,$gradPart,$secPart,$madPart,$padPart){
         $stmt= Conexion::conectar()->prepare("UPDATE $tabla SET nombre=:NOMBRE_PART , fech_nac=:FECHA_PART , grado_id=:GRADO_PART , 

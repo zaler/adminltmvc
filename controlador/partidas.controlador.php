@@ -2,12 +2,12 @@
 
 class ctrPartidas
 {
-   /*static public function ctrEliminarPartidas($valor)
+   static public function ctrEliminarPartidas($valor)
     {
         $tabla = "partidas";
         $respuesta = mdlPartidas::mdlEliminarPartidas($tabla, $valor);
         return $respuesta;
-    }*/
+    }
 
     /*static public function ctrMostrarPartidas1($item, $valor)
     {
