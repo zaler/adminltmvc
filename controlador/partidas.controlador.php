@@ -79,17 +79,8 @@ class ctrPartidas
 
     static public function ctrVerPartidas($item, $valor)
     {
-
-        try {
             $tabla = "mnt_partidas";
-        $respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
-        } catch (Exception $e) {
-            // Manejo de la excepción de división por cero
-            $respuesta= $e->getMessage();
-        }
-
-        //$tabla = "mnt_partidas";
-        //$respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
+            $respuesta = mdlPartidas::mdlVerPartidas($tabla, $item, $valor);
         return $respuesta;
     }
     

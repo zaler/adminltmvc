@@ -37,11 +37,11 @@ $(".tablaPartidas").DataTable({
 $(".tablaPartidas").on("click", ".btnEditarPartida", function(){
 	var id = $(this).attr("idPartida");
 
-	console.log(id);
+	//console.log(id);
 	var datos = new FormData();
 	
 	datos.append("id", id);
-	
+
 	$.ajax({
 		url:"ajax/partidas.ajax.php",
 		method: "POST",
@@ -51,7 +51,7 @@ $(".tablaPartidas").on("click", ".btnEditarPartida", function(){
 		processData: false,
 		dataType: "json",
 		success: function (respuesta) {
-
+		
             $('input[name="partida_idE"]').val(respuesta["id"]);
             $('input[name="nombreE"]').val(respuesta["nombre"]);
 			$('input[name="fechaE"]').val(respuesta["fech_nac"]);
@@ -59,11 +59,8 @@ $(".tablaPartidas").on("click", ".btnEditarPartida", function(){
             $('input[name="seccionE"]').val(respuesta["secciones_id"]);
             $('input[name="madreE"]').val(respuesta["nombre_madre"]);
             $('input[name="padreE"]').val(respuesta["nombre_padre"]);
-
-		},
-		error: function(){
-			console.log('error');
 		}
+		
 	})
 })
 
