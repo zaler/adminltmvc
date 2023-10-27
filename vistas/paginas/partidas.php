@@ -208,7 +208,7 @@ Modal editar partidas
                     <span class="glyphicon glyphicon-calendar form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <select class="form-control" name="gradoE" required>
+                    <select class="form-control" id="gradoE" name="gradoE" required>
 
                     <?php
                    
@@ -224,13 +224,10 @@ Modal editar partidas
                     </select>
                 </div>
                 <div class="form-group has-feedback" bis_skin_checked="1">
-                    <select class="form-control" name="seccionE" required>
-
+                    <select class="form-control" id="seccionE" name="seccionE" required>
                     <?php
-                   
                     $partidas = ctrPartidas::ctrMostrarSecciones($item, $valor);
                     foreach( $partidas as  $partida){
-                        
                     ?>
                     <option value="<?php echo $partida["id"] ?>"><?php echo $partida["nombre"] ?></option>
                     <?php

@@ -150,41 +150,19 @@ class mdlUsuarios{
 
         $stmt= Conexion::conectar()->prepare("INSERT INTO $tabla(usuario , password , nombre ,foto , rol) VALUES (:USUARIO_u , :PASS_u , :NOMBRE_u , :FOTO_u , :ROL_u)");
 
-
         $stmt->bindParam(":NOMBRE_u", $datos["nom_usuario"], PDO::PARAM_STR);
         $stmt->bindParam(":USUARIO_u", $datos["nom_user"], PDO::PARAM_STR);
         $stmt->bindParam(":PASS_u", $datos["pass_user"], PDO::PARAM_STR);
         $stmt->bindParam(":ROL_u", $datos["rol_user"], PDO::PARAM_INT);
         $stmt->bindParam(":FOTO_u", $datos["foto"], PDO::PARAM_STR);
 
-
         if($stmt->execute()){
-
             return "ok";
         }else{
-
             echo "error";
         }
-
         $stmt->close();
 		$stmt = null;
-
-
-
-
-
-
     }
-
-
-
-
-
-    
 }
-
-
-
-
-
 ?>

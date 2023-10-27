@@ -294,18 +294,14 @@ Modal EDITAR usuarios
 
                     <label>rol</label>
                     <select class="form-control" name="rol_userE" required>
-
                         <?php
                         $roles = ctrRoles::ctrMostrarRoles2();
-                        
-                        foreach($roles as $rol){
-                            
+                        foreach($roles as $rol){  
 ?>
                         <option value="<?php echo $rol["id_roles"] ?>"><?php echo $rol["nom_rol"] ?></option>
                         <?php
                        }
 ?>
-
                     </select>
 
                 </div>

@@ -59,8 +59,7 @@ class ctrRoles
         $respuesta = mdlroles::mdlVerRoles($tabla, $item, $valor);
         return $respuesta;
     }
-
-    
+ 
     static public function ctrEditarRol()
     {
         if (isset($_POST["nom_rolE"])) {
