@@ -18,7 +18,7 @@ class ctrPartidas
         $respuesta = mdlPartidas::mdlMostrarPartidas($tabla,$tabla2,$tabla3,$tabla4);
         return $respuesta;
     }
-
+ 
     static public function ctrMostrarGrados()
     {
         
